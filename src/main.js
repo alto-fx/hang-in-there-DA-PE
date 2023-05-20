@@ -7,13 +7,17 @@ var quote = document.querySelector(".poster-quote")
 var mainPoster = document.querySelector(".main-poster")
 var makePosterView = document.querySelector(".poster-form")
 var mySavedPosters = document.querySelector(".saved-posters")
-var showMyPosters = document.querySelector(".show-saved")
+var showSavedPostersButton = document.querySelector(".show-saved")
 var neverMindButton = document.querySelector(".show-main")
 var backToMainButton = document.querySelector(".back-to-main")
 var showMyPosterButton = document.querySelector(".make-poster")
 var userPosterImgUrl = document.querySelector("#poster-image-url")
 var userPosterTitle = document.querySelector("#poster-title")
-var userPoserQuote = document.querySelector("#poster-quote")
+var userPosterQuote = document.querySelector("#poster-quote")
+var saveMyPosterButton = document.querySelector(".save-poster")
+// var currentMainPoster = document.querySelector(".poster")
+
+
 
 // we've provided you with some data to work with 👇
 var images = [
@@ -122,10 +126,11 @@ var currentPoster;
 window.addEventListener("load", randomPoster)
 showRandPoster.addEventListener("click", randomPoster)
 makePoster.addEventListener("click", makePosterForm)
-showMyPosters.addEventListener("click", showSaved)
+showSavedPostersButton.addEventListener("click", showSaved)
 neverMindButton.addEventListener("click", backFromMake)
 backToMainButton.addEventListener("click", backFromSaved)
 showMyPosterButton.addEventListener("click", uniquePoster)
+saveMyPosterButton.addEventListener("click", saveFavoritesPoster)
 
 
 // functions and event handlers go here 👇
@@ -142,11 +147,6 @@ function randomPoster() {
     title.innerText = randoTitle
     quote.innerText = randoQuote
 }
-
-// hide mainPoster and switch to form view
-// remove "hidden" from the page we want to see
-// variable.classList.add("hidden")
-// variable.classList.remove("hidden")
 
 function makePosterForm() {
   mainPoster.classList.add("hidden")
@@ -173,20 +173,42 @@ function uniquePoster() {
   event.preventDefault();
   var inputUrl = userPosterImgUrl.value
   var inputMotivationalTitle = userPosterTitle.value
-  var inputMotivationalQuote = userPoserQuote.value
+  var inputMotivationalQuote = userPosterQuote.value
   posterImg.src=inputUrl
   title.innerText=inputMotivationalTitle
   quote.innerText=inputMotivationalQuote
   backFromMake();
   var imgValue = document.getElementById("poster-image-url").value
   images.push(imgValue);
-  varartitleValue = document.getElementById("poster-title").value
+  var titleValue = document.getElementById("poster-title").value
   titles.push(titleValue);
   var quoteValue = document.getElementById("poster-quote").value
   quotes.push(quoteValue);
+  createPoster(imgValue, titleValue, quoteValue);
+  return createPoster
 }
 
 
+function saveFavoritesPoster() {
+  var currentMainPoster = document.getElementsByClassName("poster")
+  if(!savedPosters.includes(currentMainPoster)) {
+    savedPosters.push(currentMainPoster)
+    console.log(savedPosters)
+   for(var i =0; i < savedPosters.length; i++) {
+    return savedPosters[i]
+   }
+  }
+}
+
+
+
+// var posterImg = document.querySelector(".poster-img")
+// var title = document.querySelector(".poster-title")
+// var quote = document.querySelector(".poster-quote")
+
+// posterImg.src = 
+// title.innerText = 
+// quote.innerText = 
 
 
 
@@ -216,4 +238,4 @@ function createPoster(imageURL, title, quote) {
 /* access event objects in event listener and pass events as a parameter. event.target to get specific ID's
 event something in the event object called preventDefault - overrides functionality of
 whatever it things the event should do. Target is separate from preventDefault
-*/
+// */
