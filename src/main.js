@@ -155,30 +155,21 @@ function makePosterForm() {
   makePosterView.classList.remove("hidden")
 }
 
-// All posters in the saved posters array to be displayed in the saved posters grid
-// We have an array and we need to display everything in the array -> For Loop
-// This is happening at the DOM level
-// We need the object to be printed
-// use the var currentPoster and createPoster function for them to display
-// Use classes in CSS somehow lined 119-130
-
 function showSaved() {
   mySavedPosters.classList.remove("hidden")
   mainPoster.classList.add("hidden") 
   grid.innerHTML = ""
   for (var i = 0; i < savedPosters.length; i++) {
     console.log(savedPosters)
-  grid.innerHTML += `
-  <article class="mini-poster"><id=${savedPosters[i].id}>
-    <img src=${savedPosters[i].imageURL}>
-    <h2>${savedPosters[i].title}</h2>
-    <h4>${savedPosters[i].quote}</h4>
-  </article>`
+    grid.innerHTML += `
+      <article class="mini-poster"><id=${savedPosters[i].id}>
+        <img src=${savedPosters[i].imageURL}>
+        <h2>${savedPosters[i].title}</h2>
+        <h4>${savedPosters[i].quote}</h4>
+      </article>
+    `
   }
 }
-
-    // currentPoster = createPoster(savedPosters[i].imageURL, savedPosters[i].title, savedPosters[i].quote)
-// savedPostersGrid.innerHTML(<article>"Poster"</article>)
 
 function backFromMake() {
   mainPoster.classList.remove("hidden")
@@ -195,10 +186,11 @@ function uniquePoster() {
   var inputUrl = userPosterImgUrl.value
   var inputMotivationalTitle = userPosterTitle.value
   var inputMotivationalQuote = userPosterQuote.value
-  posterImg.src=inputUrl
-  title.innerText=inputMotivationalTitle
-  quote.innerText=inputMotivationalQuote
+    posterImg.src=inputUrl
+    title.innerText=inputMotivationalTitle
+    quote.innerText=inputMotivationalQuote
   backFromMake();
+
   var imgValue = document.getElementById("poster-image-url").value
   images.push(imgValue);
   var titleValue = document.getElementById("poster-title").value
@@ -229,9 +221,3 @@ function createPoster(imageURL, title, quote) {
     title: title, 
     quote: quote}
 }
-
-// Extra Tips
-/* access event objects in event listener and pass events as a parameter. event.target to get specific ID's
-event something in the event object called preventDefault - overrides functionality of
-whatever it things the event should do. Target is separate from preventDefault
-// */
