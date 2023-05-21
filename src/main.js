@@ -160,7 +160,6 @@ function showSaved() {
   mainPoster.classList.add("hidden") 
   grid.innerHTML = ""
   for (var i = 0; i < savedPosters.length; i++) {
-    console.log(savedPosters)
     grid.innerHTML += `
       <article class="mini-poster"><id=${savedPosters[i].id}>
         <img src=${savedPosters[i].imageURL}>
