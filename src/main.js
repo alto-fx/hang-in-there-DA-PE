@@ -164,9 +164,15 @@ function makePosterForm() {
 
 function showSaved() {
   mySavedPosters.classList.remove("hidden")
-  mainPoster.classList.add("hidden")
+  mainPoster.classList.add("hidden") 
   for (var i = 0; i < savedPosters.length; i++) {
-  grid.innerHTML = `<article class="mini-poster"><id=${savedPosters[i].id}><img src=${savedPosters[i].imageURL}><h2>${savedPosters[i].title}</h2><h4>${savedPosters[i].quote}</h4></article>`
+    console.log(savedPosters)
+  grid.innerHTML += `
+  <article class="mini-poster"><id=${savedPosters[i].id}>
+    <img src=${savedPosters[i].imageURL}>
+    <h2>${savedPosters[i].title}</h2>
+    <h4>${savedPosters[i].quote}</h4>
+  </article>`
   }
 }
 
