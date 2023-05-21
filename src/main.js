@@ -15,6 +15,7 @@ var userPosterImgUrl = document.querySelector("#poster-image-url")
 var userPosterTitle = document.querySelector("#poster-title")
 var userPosterQuote = document.querySelector("#poster-quote")
 var saveMyPosterButton = document.querySelector(".save-poster")
+var grid = document.querySelector(".saved-posters-grid")
 
 
 
@@ -154,10 +155,29 @@ function makePosterForm() {
   makePosterView.classList.remove("hidden")
 }
 
+// All posters in the saved posters array to be displayed in the saved posters grid
+// We have an array and we need to display everything in the array -> For Loop
+// This is happening at the DOM level
+// We need the object to be printed
+// use the var currentPoster and createPoster function for them to display
+// Use classes in CSS somehow lined 119-130
+
 function showSaved() {
   mySavedPosters.classList.remove("hidden")
-  mainPoster.classList.add("hidden")
+  mainPoster.classList.add("hidden") 
+  for (var i = 0; i < savedPosters.length; i++) {
+    console.log(savedPosters)
+  grid.innerHTML += `
+  <article class="mini-poster"><id=${savedPosters[i].id}>
+    <img src=${savedPosters[i].imageURL}>
+    <h2>${savedPosters[i].title}</h2>
+    <h4>${savedPosters[i].quote}</h4>
+  </article>`
+  }
 }
+
+    // currentPoster = createPoster(savedPosters[i].imageURL, savedPosters[i].title, savedPosters[i].quote)
+// savedPostersGrid.innerHTML(<article>"Poster"</article>)
 
 function backFromMake() {
   mainPoster.classList.remove("hidden")
