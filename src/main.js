@@ -15,7 +15,6 @@ var userPosterImgUrl = document.querySelector("#poster-image-url")
 var userPosterTitle = document.querySelector("#poster-title")
 var userPosterQuote = document.querySelector("#poster-quote")
 var saveMyPosterButton = document.querySelector(".save-poster")
-// var currentMainPoster = document.querySelector(".poster")
 
 
 
@@ -146,6 +145,7 @@ function randomPoster() {
     posterImg.src = randoPoster
     title.innerText = randoTitle
     quote.innerText = randoQuote
+  currentPoster = createPoster(randoPoster, randoTitle, randoQuote)
 }
 
 function makePosterForm() {
@@ -184,35 +184,18 @@ function uniquePoster() {
   titles.push(titleValue);
   var quoteValue = document.getElementById("poster-quote").value
   quotes.push(quoteValue);
-  createPoster(imgValue, titleValue, quoteValue);
-  return createPoster
-}
 
+  currentPoster = createPoster(imgValue, titleValue, quoteValue)
+}
 
 function saveFavoritesPoster() {
-  var currentMainPoster = document.getElementsByClassName("poster")
-  if(!savedPosters.includes(currentMainPoster)) {
-    savedPosters.push(currentMainPoster)
-    console.log(savedPosters)
-   for(var i =0; i < savedPosters.length; i++) {
-    return savedPosters[i]
-   }
-  }
+  for (i =0; i < savedPosters.length; i++){
+    if (currentPoster.id === savedPosters[i].id) {
+      return
+    }
+  } 
+  savedPosters.push(currentPoster)
 }
-
-
-
-// var posterImg = document.querySelector(".poster-img")
-// var title = document.querySelector(".poster-title")
-// var quote = document.querySelector(".poster-quote")
-
-// posterImg.src = 
-// title.innerText = 
-// quote.innerText = 
-
-
-
-// event prevent inside of a function. put it inside of function connected to event listener. 
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
@@ -225,14 +208,6 @@ function createPoster(imageURL, title, quote) {
     title: title, 
     quote: quote}
 }
-
-
-
-// 1. once we have rand number, set them as index numbers for each of arrays to find out what is at those index numbers. 
-
-// 2. create new function that returns what's at the index postion at each of the arrays. pull out the string to set as the value the for createPoster function parameters. 
-
-//3. different numbers all random. plug them into each array names using bracket notion. this will give us the string, then we assign that to a variable. put this variable into the value part of the object keys.
 
 // Extra Tips
 /* access event objects in event listener and pass events as a parameter. event.target to get specific ID's
