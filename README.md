@@ -25,8 +25,8 @@ We are both in our first module out of five in our program. We have officially c
 
 
 ### Contributors:
-- Prissilla Escobar - 2305 FE Mod 1 student at Turing School for Software and Design https://github.com/prissilla-escobar
-- Devin Altobello - 2305 FE Mod 1 student at Turing School for Software and Design https://github.com/alto-fx
+- [Prissilla Escobar](https://github.com/prissilla-escobar) - 2305 FE Mod 1 student at Turing School for Software and Design
+- [Devin Altobello](https://github.com/alto-fx) - 2305 FE Mod 1 student at Turing School for Software and Design
 
 ### Learning Goals:
 This was the first time that we worked on an actual application as well as reading HTML and CSS. Our learning goals were to be able to add functionality to this app by only updating the JavaScript file. We also wanted to learn how to write functions that actually had an event tied to it that we can see on the browser. Aside from technical code, we had a goal to understand how to use the remote repository to our advantage when working with others. We were able to push code one partner worked on into the remote repo and have the other partner pull the new code onto their local machine.
