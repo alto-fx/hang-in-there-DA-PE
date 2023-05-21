@@ -165,6 +165,7 @@ function makePosterForm() {
 function showSaved() {
   mySavedPosters.classList.remove("hidden")
   mainPoster.classList.add("hidden") 
+  grid.innerHTML = ""
   for (var i = 0; i < savedPosters.length; i++) {
     console.log(savedPosters)
   grid.innerHTML += `
