@@ -166,7 +166,6 @@ function showSaved() {
   mySavedPosters.classList.remove("hidden")
   mainPoster.classList.add("hidden") 
   for (var i = 0; i < savedPosters.length; i++) {
-    console.log(savedPosters)
   grid.innerHTML += `
   <article class="mini-poster"><id=${savedPosters[i].id}>
     <img src=${savedPosters[i].imageURL}>
