@@ -17,6 +17,9 @@ This is a user-friendly app that displays motivational posters. Users can genera
 
 <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/346101898_1201556800544629_8315210735647749698_n.png?stp=dst-png_p206x206&_nc_cat=104&ccb=1-7&_nc_sid=aee45a&_nc_ohc=i5vtQSEcKQ4AX8971gU&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQi4pmfUbrYfXIbBLycnZn8qw6-z100ChDjMgWJaInK7A&oe=6491ED50">
 
+### Deployment Link:
+https://alto-fx.github.io/hang-in-there-DA-PE/
+
 
 ### Context:
 The project was introduced to us 5 days before the due date. We worked together to block off time that would be dedicated to work on the project outside of class time for the 5 days. Despite us having a 2 hour time difference we clearly established norms and start/end times to our days.
